@@ -3,13 +3,14 @@ import './App.css';
 import axios from 'axios';
 import { Route } from 'react-router-dom';  
 import Home from './Friends/Home';
-import Friends from './Friends/Friends';
+import FriendsList from './Friends/FriendsList';
+import AddFriendForm from './Friends/AddFriendForm';
 
 class App extends React.Component {
  constructor() {
    super();
    this.state = {
-     friends: []
+     fr: []
    };
  }
 
@@ -28,7 +29,7 @@ componentDidMount() {
     <div className="App">
       <Route exact path={'/'} component={Home} />
       <Route path={'/friends'} render={props => {
-        return <Friends {...props} fr={this.state.fr} />
+        return <FriendsList {...props} fr={this.state.fr} />
       }}
       />
     </div>
