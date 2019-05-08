@@ -3,13 +3,11 @@ import Friends from './Friends';
 import { Link } from 'react-router-dom';
 
 const FriendsList = props => {
+    const friends = props.friends;
+    
     return(
         <div>
-            [LIST]
             <ul>
-                <li>
-                   <Link to={'/'}>Home</Link> 
-                </li>
                 <li>
                     <Link to={'/friends'}>Friends</Link>
                 </li>

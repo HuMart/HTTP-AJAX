@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import { Route } from 'react-router-dom';  
-import Home from './Friends/Home';
 import FriendsList from './Friends/FriendsList';
-import AddFriendForm from './Friends/AddFriendForm';
+import FriendForm from './Friends/FriendForm';
+
 
 class App extends React.Component {
  constructor() {
@@ -25,13 +25,15 @@ componentDidMount() {
 }
 
   render() {
-  return (
-    <div className="App">
-      <Route exact path={'/'} component={Home} />
-      <Route path={'/friends'} render={props => {
-        return <FriendsList {...props} fr={this.state.fr} />
-      }}
+    return (
+      <div className="App">
+        <h1>My Friends List</h1>
+        <Route path={'/'} render={props => {
+          return <FriendsList {...props} fr={this.state.fr} />        
+        }        
+      }
       />
+      <FriendForm />
     </div>
   );
   }
